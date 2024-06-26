@@ -1,11 +1,15 @@
 import 'dart:convert';
-import 'package:amin_ai_assistant/secret_keys.dart';
+
+
 import 'package:http/http.dart' as http;
 
 class OPenAIService{
   final List<Map<String,String>> messages = [];
+  final openAIKey =  "sk-proj-ggXK15bNdzoFQafCBtRcT3BlbkFJoNvVJFeMfC6OGy4Q32fM";
+
   //checks if the request if for image generation by Dall-E or for ChatGPT
   Future<String> isArtPromptAPI(String prompt) async{
+
     try{
       final res = await http.post(Uri.parse(
         "https://api.openai.com/v1/chat/completions",
@@ -45,7 +49,8 @@ class OPenAIService{
 
       }
 //something wrong happened. Check your api key or something related to usage
-      return "Error";
+
+      return "Error occurred. something wrong happened. Check your api key or something related to usage";
     }catch(e){
       return e.toString();
     }

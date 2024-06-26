@@ -145,7 +145,11 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(16),
                 child: Text(generatedContent ?? ""),
               ),
-              if(generatedImageUrl != null) Image.network(generatedImageUrl!),
+              if(generatedImageUrl != null) Container(
+                decoration: BoxDecoration(
+                  image:  DecorationImage(image: NetworkImage(generatedImageUrl!))
+                ),
+              ) ,
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20).copyWith(top: 20),
                 alignment: Alignment.centerLeft,
