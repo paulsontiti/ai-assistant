@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 class OPenAIService{
   final List<Map<String,String>> messages = [];
-  final openAIKey =  "sk-proj-yid2Dbc49pmjSCdoJeYiT3BlbkFJQJEo1GSBWyWnQUuMULkV";
+  final openAIKey =  "sk-proj-K14V7xmTgO5mMwZsYNWXT3BlbkFJRYV14Sg4ODji2qwE5xQk";
 
   //checks if the request if for image generation by Dall-E or for ChatGPT
   Future<String> isArtPromptAPI(String prompt) async{
